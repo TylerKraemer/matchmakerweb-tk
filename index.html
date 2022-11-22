@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Matchmaker Web</title>
+</head>
+
+<body style="background-color:rgb(255, 148, 54);">
+    <h1>Matchmaker Web</h1>
+    <h2>By: Tyler Kraemer</h2>
+    <h2>Credit: Eric Pogue</h2>
+    <br>
+    <h4>This is the one and only website to see if you are compatable to me (Tyler Kraemer).</h4>
+    <h4>Below are a series of statements that you must respond to with the drop downs and say</h4>
+    <h4>whether you strongly agree, agree, are neutral, disagree, or strongly disagree. Once</h4>
+    <h4>you are finsihed click the calculate compatibility button in order to calculate our compatibility.</h4>
+    <h4>Once you have our campatibility percentage just click the button the corresponds to the range</h4>
+    <h4>your score fell into to hear a special message from yours truly.</h4>
+    <br>
+    <h4>Are we soul mates or are we opposites? Only this test can answer that. Have fun and be honest!</h4>
+    <br>
+    <br>
+    <label>Ice hockey is the best sport in the world:</label>
+    <select id="q1">
+        <option value="5">Strongly Agree</option>
+        <option value="4">Agree</option>
+        <option value="3">Neutral</option>
+        <option value="2">Disagree</option>
+        <option value="1">Strongly Disagree</option>
+    </select>
+
+    <br>
+    <br>
+
+    <label>It is better to live in an urban area rather than a rural area:</label>
+    <select id="q2">
+        <option value="5">Strongly Agree</option>
+        <option value="4">Agree</option>
+        <option value="3">Neutral</option>
+        <option value="2">Disagree</option>
+        <option value="1">Strongly Disagree</option>
+    </select>
+
+    <br>
+    <br>
+
+    <label>Late night drives make a great date:</label>
+    <select id="q3">
+        <option value="5">Strongly Agree</option>
+        <option value="4">Agree</option>
+        <option value="3">Neutral</option>
+        <option value="2">Disagree</option>
+        <option value="1">Strongly Disagree</option>
+    </select>
+
+    <br>
+    <br>
+
+    <label>V8 engines are better than diesel engines:</label>
+    <select id="q4">
+        <option value="5">Strongly Agree</option>
+        <option value="4">Agree</option>
+        <option value="3">Neutral</option>
+        <option value="2">Disagree</option>
+        <option value="1">Strongly Disagree</option>
+    </select>
+
+    <br>
+    <br>
+
+    <label>Going to the gym is a necessary routine:</label>
+    <select id="q5">
+        <option value="5">Strongly Agree</option>
+        <option value="4">Agree</option>
+        <option value="3">Neutral</option>
+        <option value="2">Disagree</option>
+        <option value="1">Strongly Disagree</option>
+    </select>
+
+    <br>
+    <br>
+
+    <label>The tv show Friends is better than the tv show How I Met Your Mother:</label>
+    <select id="q6">
+        <option value="5">Strongly Agree</option>
+        <option value="4">Agree</option>
+        <option value="3">Neutral</option>
+        <option value="2">Disagree</option>
+        <option value="1">Strongly Disagree</option>
+    </select>
+
+    <br>
+    <br>
+
+    <label>The 2000s era of music was the worst:</label>
+    <select id="q7">
+        <option value="5">Strongly Agree</option>
+        <option value="4">Agree</option>
+        <option value="3">Neutral</option>
+        <option value="2">Disagree</option>
+        <option value="1">Strongly Disagree</option>
+    </select>
+
+    <br>
+    <br>
+
+    <button onclick="calculateCompatibility()">Calculate Compatibility</button>
+    <p id="compatibility"></p>
+
+
+<br>
+<br>
+<script>
+console.log("Starting Matchmaker...")
+
+function calculateCompatibility() {
+    console.log("calculateCompatibility()")
+
+    const DESIRED_RESPONSE = [
+        5,
+        1,
+        4,
+        3,
+        5,
+        1,
+        2,
+    ]
+
+    const MAX_SCORE = 35;
+
+    let question1Response = document.getElementById("q1").selectedOptions[0].value;
+    let question2Response = document.getElementById("q2").selectedOptions[0].value;
+    let question3Response = document.getElementById("q3").selectedOptions[0].value;
+    let question4Response = document.getElementById("q4").selectedOptions[0].value;
+    let question5Response = document.getElementById("q5").selectedOptions[0].value;
+    let question6Response = document.getElementById("q6").selectedOptions[0].value;
+    let question7Response = document.getElementById("q7").selectedOptions[0].value;
+
+    console.log("Question 1 Answers:");
+    console.log(document.getElementById("q1").selectedOptions[0].text);
+    console.log(document.getElementById("q1").selectedOptions[0].value);
+    console.log(question1Response);
+
+    console.log("Question 2 Answers:");
+    console.log(document.getElementById("q2").selectedOptions[0].text);
+    console.log(document.getElementById("q2").selectedOptions[0].value);
+    console.log(question2Response);
+
+    console.log("Question 3 Answers:");
+    console.log(document.getElementById("q3").selectedOptions[0].text);
+    console.log(document.getElementById("q3").selectedOptions[0].value);
+    console.log(question3Response);
+
+    console.log("Question 4 Answers:");
+    console.log(document.getElementById("q4").selectedOptions[0].text);
+    console.log(document.getElementById("q4").selectedOptions[0].value);
+    console.log(question4Response);
+
+    console.log("Question 5 Answers:");
+    console.log(document.getElementById("q5").selectedOptions[0].text);
+    console.log(document.getElementById("q5").selectedOptions[0].value);
+    console.log(question5Response);
+
+    console.log("Question 6 Answers:");
+    console.log(document.getElementById("q6").selectedOptions[0].text);
+    console.log(document.getElementById("q6").selectedOptions[0].value);
+    console.log(question6Response);
+
+    console.log("Question 7 Answers:");
+    console.log(document.getElementById("q7").selectedOptions[0].text);
+    console.log(document.getElementById("q7").selectedOptions[0].value);
+    console.log(question7Response);
+
+    let question1Compatibility = 5 - Math.abs(question1Response - DESIRED_RESPONSE[0])
+    let question2Compatibility = 5 - Math.abs(question2Response - DESIRED_RESPONSE[1])
+    let question3Compatibility = 5 - Math.abs(question3Response - DESIRED_RESPONSE[2])
+    let question4Compatibility = 5 - Math.abs(question4Response - DESIRED_RESPONSE[3])
+    let question5Compatibility = 5 - Math.abs(question5Response - DESIRED_RESPONSE[4])
+    let question6Compatibility = 5 - Math.abs(question6Response - DESIRED_RESPONSE[5])
+    let question7Compatibility = 5 - Math.abs(question7Response - DESIRED_RESPONSE[6])
+
+    console.log("c1="+question1Compatibility);
+    console.log("c2="+question2Compatibility);
+    console.log("c3="+question3Compatibility);
+    console.log("c4="+question4Compatibility);
+    console.log("c5="+question5Compatibility);
+    console.log("c6="+question6Compatibility);
+    console.log("c7="+question7Compatibility);
+
+    let totalCompatibility = question1Compatibility + question2Compatibility + question3Compatibility + question4Compatibility + question5Compatibility + question6Compatibility + question7Compatibility;
+
+    totalCompatibility *= 100 / MAX_SCORE;
+    totalCompatibility = Math.round(totalCompatibility);
+    console.log("totalCompatibility="+ totalCompatibility);
+
+
+
+    document.getElementById("compatibility").innerHTML = "Your Compatibility Is: " + totalCompatibility + "%";
+    
+
+
+}
+
+
+
+</script>
+
+<button onclick="fivezeroresults()">Click here if score is less than 50</button>
+<p id="fivezeroresults"></p>
+
+<script>
+    function fivezeroresults() {
+        document.getElementById("fivezeroresults").innerHTML = "I don't think this will work..."
+    }
+</script>
+
+<button onclick="sevenzeroresults()">Click here if score is 51-70</button>
+<p id="sevenzeroresults"></p>
+
+<script>
+    function sevenzeroresults() {
+        document.getElementById("sevenzeroresults").innerHTML = "I'd like to be friends :)"
+    }
+</script>
+
+<button onclick="eightzeroresults()">Click here if score is 71-80</button>
+<p id="eightzeroresults"></p>
+
+<script>
+    function eightzeroresults() {
+        document.getElementById("eightzeroresults").innerHTML = "Can I get your number???"
+    }
+</script>
+
+<button onclick="ninezeroresults()">Click here if score is 81-90</button>
+<p id="ninezeroresults"></p>
+
+<script>
+    function ninezeroresults() {
+        document.getElementById("ninezeroresults").innerHTML = "Want to go on a date sometime?"
+    }
+</script>
+
+<button onclick="tenzeroresults()">Click here if score is 91-100</button>
+<p id="tenzeroresults"></p>
+
+<script>
+    function tenzeroresults() {
+        document.getElementById("tenzeroresults").innerHTML = "Will your mar- I mean would you like to go on a date tomorrow night? (Call me...)"
+    }
+</script>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</body>
+
+
+</html>
